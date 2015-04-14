@@ -3,7 +3,8 @@ MAINTAINER Chris Hardekopf <cjh@ygdrasill.com>
 
 # Install opensmtpd
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive  apt-get install -y opensmtpd && \
+    DEBIAN_FRONTEND=noninteractive  apt-get install -y opensmtpd \
+    ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 # The spool should be a volume
