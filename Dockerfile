@@ -6,6 +6,9 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive  apt-get install -y opensmtpd && \
     rm -rf /var/lib/apt/lists/*
 
+# The spool should be a volume
+VOLUME [ "/var/spool/smtpd" ]
+
 # Expose the mail port
 EXPOSE 25
 
